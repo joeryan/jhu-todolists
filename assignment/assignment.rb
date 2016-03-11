@@ -104,6 +104,8 @@ class Assignment
       # accept an id input parameter
       # use the User Model class to remove the User associated with the `id` primary key from the database
       # (no return is required)
+      user = User.find_by! id: id
+      user.delete
   end
 
   def delete_todolist(id)
