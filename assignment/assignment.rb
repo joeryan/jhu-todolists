@@ -39,6 +39,7 @@ class Assignment
       # accept offset and limit input parameters
       # use the TodoList Model class to find all TodoLists, ordered by `list_due_date` descending, with specified row offset and row limit
       # return a collection of TodoList instances that represent the specified rows
+      lists = TodoList.all.order(list_due_date: :desc).limit(limit).offset(offset)
   end
 
   #
