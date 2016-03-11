@@ -12,13 +12,17 @@ class Assignment
       # return an instance of the class with primary key (`id`), and dates (`created_at` and `updated_at`) assigned
       new_user = User.new(params)
       new_user.save
-      
+
   end
 
   def create_todolist(params)
       # accept a hash of todolist properties (`:name` and `:due_date`) as an input parameter. Note these are not 100% the same as Model class.
       # use the TodoList Model class to create a new user in the DB
       # return an instance of the class with primary key (`id`), and dates (`created_at` and `updated_at`) assigned
+      new_list = TodoList.new
+      new_list.list_name = params[:name]
+      new_list.list_due_date = params[:due_date]
+      new_list.save
   end
 
   #
@@ -28,6 +32,7 @@ class Assignment
       # accept offset and limit input parameters
       # use the User Model class to find all Users, ordered by `updated_at` ascending, with specified row offset and row limit
       # return a collection of User instances that represent the specified rows
+      users = User.all.order(updated_at: :asc).limit(limit).offset(offset)
   end
 
   def find_alllists(offset, limit)
