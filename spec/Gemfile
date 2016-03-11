@@ -12,18 +12,15 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'web-console', '~> 2.0', group: :development
-
 group :development, :test do
   gem 'byebug'
+  gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
 group :test do
  gem 'rspec-rails', '~> 3.0'
 end
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'capybara', '~> 2.4.4'
 gem 'poltergeist', '~> 1.6.0'
