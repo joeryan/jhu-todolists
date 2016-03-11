@@ -58,6 +58,7 @@ class Assignment
       # use the TodoList Model class to find all TodoLists with the supplied list_name.
       # NOTE: List name is not required to be unique, thus you can have many lists with the same list name.
       # return a collection of TodoList instances that match the provided name
+      lists = TodoList.where list_name: name
   end
 
   #
